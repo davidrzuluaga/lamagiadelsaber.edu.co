@@ -1,0 +1,33 @@
+@import "theme";
+@import "bootstrap";
+.banner {
+    background: url('https://s3.us-east-2.amazonaws.com/lamagiadelsaber.edu.co/bannerimg.jpg') no-repeat 50%;
+    background-size: cover;
+    height: 60vh;
+}
+.logo {
+    padding-top: 25px;
+}
+.grades {
+    background: url('https://s3.us-east-2.amazonaws.com/lamagiadelsaber.edu.co/013cbca25e17d8cecbab15f4c7b89566_590x390za.png') no-repeat 50%;
+    background-color: #2A99A9;
+    background-size: cover;
+}
+.grade {
+    background: url('https://s3.us-east-2.amazonaws.com/lamagiadelsaber.edu.co/013cbca25e17d8cecbab15f4c7b89566_590x390.png') no-repeat 50%;
+    background-size: cover;
+    height: 220px;
+}
+.grade h2 {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 220px; 
+    color: white;
+    font-size: 40px;
+}
+.main {
+    background: url('https://s3.us-east-2.amazonaws.com/lamagiadelsaber.edu.co/9af170c64c0b9012e984c62ca93dc2b8.jpg') no-repeat 50%;
+    background-size: cover;
+    height: 220px;
+    
+}
