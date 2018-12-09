@@ -33,6 +33,7 @@ body p {
     background: url('https://s3.us-east-2.amazonaws.com/lamagiadelsaber.edu.co/013cbca25e17d8cecbab15f4c7b89566_590x390.png') no-repeat 50%;
     background-size: cover;
     height: 230px;
+    text-shadow: rgb(5, 5, 5) 1px 5px 10px;
 }
 .grade h2 {
     text-align: center;
@@ -89,6 +90,7 @@ a:hover {text-decoration: none;}
     margin-left: 20px;
     margin-top: 20px;
     vertical-align: middle;
+    text-align: center;
 }
 #lema a {
     color: #F05B6D;
@@ -97,9 +99,6 @@ a:hover {text-decoration: none;}
 #lema a:hover {
     color: rgb(185, 105, 115);  
     text-decoration: none;
-}
-#lema {
-    text-align: center;
 }
 #docente {
     background-color: #2a98a962;
@@ -167,3 +166,60 @@ a:hover {text-decoration: none;}
 #footerinfo a {
     color: white;
 }
+
+#teacher {
+    background-color: rgba(236, 206, 210, 0.548);
+    margin-left: 20px;
+    margin-top: 20px;
+    vertical-align: middle;
+}
+#teacher h3 {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 25px;
+}
+#teacher p {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+#nostrosmission {
+    color: #187280;    
+    margin-left: 20px;
+    margin-top: 20px;
+    vertical-align: middle;
+}
+#nostrosmission h3 {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 25px;
+}
+#nostrosmission p {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+#nostrosfilosofia {
+    color: rgb(185, 105, 115);      
+    margin-left: 20px;
+    margin-top: 20px;
+    vertical-align: middle;
+}
+#nostrosfilosofia h3 {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 25px;
+}
+#nostrosfilosofia p {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 10px;
+}
+.separation {
+    margin-top: 10px 
+}
+.direccion p { margin: 0;}
+.gallery {
+    margin-right: 20%;
+}
+#gallerybutton a:hover {cursor: pointer;}

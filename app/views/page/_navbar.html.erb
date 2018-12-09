@@ -1,25 +1,25 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light" data-toggle="affix">
     <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
-        <a class="navbar-brand" href="#">La Magia del Saber</a>
+        <%= link_to "La Magia del Saber".html_safe, root_path, class:"navbar-brand" %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse text-center" id="navbarsExample11">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <%= link_to "Home".html_safe, root_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Nosotros</a>
+              <%= link_to "Nosotros".html_safe, nosotros_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Información</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Galeria</a>
+              <%= link_to "Galeria".html_safe, galeria_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
+              <%= link_to "Contacto".html_safe, contacto_path, class: "nav-link" %>
             </li>
           </ul>
         </div>
