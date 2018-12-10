@@ -1,11 +1,11 @@
-@import "theme";
 @import "bootstrap";
-body {
-    font-family: 'ABeeZee', cursive;
-}
-body p {
-    font-family: 'Kalam', cursive;
-
+@media (min-width: 768px) {
+    body {
+        font-family: 'ABeeZee', cursive;
+    }
+    body p {
+        font-family: 'Kalam', cursive;
+    }
 }
 .header {
     background: url('https://s3.us-east-2.amazonaws.com/lamagiadelsaber.edu.co/bannerimg.jpg') no-repeat 50%;
@@ -28,6 +28,7 @@ body p {
 .grades {
     background-color: #2A99A9;
     background-size: cover;
+    text-shadow: rgb(5, 5, 5) 1px 5px 10px;
 }
 .grade {
     background: url('https://s3.us-east-2.amazonaws.com/lamagiadelsaber.edu.co/013cbca25e17d8cecbab15f4c7b89566_590x390.png') no-repeat 50%;
@@ -121,7 +122,8 @@ a:hover {text-decoration: none;}
     padding-left: 100px;
     background-color: #2A99A9;
     color: white;
-    height: 300px;
+    height: auto;
+    padding-bottom: 20px; 
 }
 #footer .location {
     padding-top: 20px; 
