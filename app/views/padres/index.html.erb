@@ -4,14 +4,43 @@
 <div class="main">
     <div class="dropsreverted"></div>
     <div class="row">
-        <div class="offset-lg-2 col-lg-8">
+        <div class="offset-lg-2">
             <h3>Boletines</h3>
+            <div class="row">
+                <% @boletines.each do |boletin| %>
+                    <div class="col-lg-4 boletin">
+                        <a href="/padres/<%= boletin.id %>#inicio"><div class="card" style="width: 15rem;">
+                          <img class="card-img-top" src="<%= boletin.imgcover %>" alt="Card image cap">
+                          <div class="card-body">
+                            <h4><%= boletin.title %></h4>
+                            <p class="card-text"><%= markdown(boletin.body.truncate(40, separator: ' ')) %></p>
+                            <p><%= boletin.created_at.strftime("%d-%m-%Y") %></p>
+                            <button type="button" class="btn btn-primary btn-sm">Leer Boletin</button>
+                          </div>
+                        </div></a>
+                    </div>
+                <% end %>
+            </div>   
+            <a href="/padres/boletines#inicio" class="boletines btn btn-primary" role="button">Ver Mas</a>
         </div>
     </div>
-    <div class="row">
-        <div class="offset-lg-2 col-lg-8">
-            <h3>Información útil</h3>
+    <div class="offset-lg-2">
+        <h3>Información Útil</h3>
+        <div class="row">
+            <% @infoutil.each do |info| %>                
+                <div class="col-lg-3">
+                    <a href="/padres/<%= info.id %>#inicio"><div class="card">
+                      <img class="card-img-top" src="<%= info.imgcover %>" alt="Card image cap">
+                      <div class="card-body">
+                        <h4><%= info.title %></h4>
+                        <p class="card-text"><%= markdown(info.body.truncate(40, separator: ' ')) %></p>
+                        <p><%= info.created_at.strftime("%d-%m-%Y") %></p>
+                      </div>
+                    </div></a>
+                </div>
+            <% end %>
         </div>
+        <a href="/padres/infoutil#inicio" class="boletines btn btn-primary" role="button">Ver Mas</a>
+    </div>
     <%= render "./page/footer" %>
-    </div>
 </div>

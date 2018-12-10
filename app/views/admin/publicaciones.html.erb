@@ -1,0 +1,47 @@
+<%= render "./page/header" %>
+<a name="inicio"></a>
+<%= render "./page/navbar" %>
+<div class="main">
+    <div class="dropsreverted"></div>
+        <div class="row offset-lg-2">
+            <div class="col-lg-8">
+                <h3><a href="/padres/new" class="btn btn-primary" role="button">Nueva Publicación</a></h3>
+            </div>
+            <div class="col-lg-5">
+                <div class="card">
+                  <div class="card-header">
+                    <h3>Boletines Publicados</h3>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <% @boletines.each do |boletin|%>
+                          <li class="list-group-item">
+                            <%= boletin.title %>
+                            <a href="/padres/<%= boletin.id %>" target="_blank">ver</a>
+                            <%= link_to "&#x270E; Editar ".html_safe, edit_padre_path(boletin) %> 
+                            <%= link_to "&#128465; Eliminar ".html_safe, boletin, method: :delete, data: { confirm: "¿Eliminar?" } %>
+                          </li>
+                    <% end %>
+                  </ul>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="card">
+                  <div class="card-header">
+                    <h3>Info Útil Publicada</h3>
+                  </div>
+                  <ul class="list-group list-group-flush">
+                    <% @infoutil.each do |info|%>
+                          <li class="list-group-item">
+                            <%= info.title %>
+                            <a href="/padres/<%= info.id %>" target="_blank">ver</a>
+                            <%= link_to "&#x270E; Editar ".html_safe, edit_padre_path(info) %> 
+                            <%= link_to "&#128465; Eliminar ".html_safe, info, method: :delete, data: { confirm: "¿Eliminar?" } %>
+                          </li>
+                    <% end %>
+                  </ul>
+                </div>
+            </div>
+        </div>
+        <%= render "./page/footer" %>
+    </div>
+</div>

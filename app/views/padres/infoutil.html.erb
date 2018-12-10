@@ -1,0 +1,28 @@
+<%= render "./page/header" %>
+<a name="inicio"></a>
+<%= render "./page/navbar" %>
+<div class="main">
+    <div class="dropsreverted"></div>
+    <div class="row">
+        <div class="boletines">
+        <div class="offset-lg-2">
+            <h3>Informacion Util</h3>
+            <div class="row">
+                <% @infoutil.each do |boletin| %>
+                    <div class="col-lg-3">
+                        <a href="/padres/<%= boletin.id %>#inicio"><div class="card">
+                          <img class="card-img-top" src="<%= boletin.imgcover %>" alt="Card image cap">
+                          <div class="card-body">
+                            <h4><%= boletin.title %></h4>
+                            <p class="card-text"><%= markdown(boletin.body.truncate(40, separator: ' ')) %></p>
+                            <p><%= boletin.created_at.strftime("%d-%m-%Y") %></p>
+                          </div>
+                        </div></a>
+                    </div>
+                <% end %>
+            </div>   
+        </div>
+        </div>
+    <%= render "./page/footer" %>
+    </div>
+</div>
