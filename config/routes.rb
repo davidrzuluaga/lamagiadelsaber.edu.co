@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get '/galeria', to: 'page#galeria', as: 'galeria'
   get '/contacto', to: 'page#contacto', as: 'contacto'
   get 'padres/index'
+  resources "padres"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
