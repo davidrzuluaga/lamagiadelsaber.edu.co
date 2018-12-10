@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'admin/index'
   root 'page#index'
   get '/nosotros', to: 'page#nosotros', as: 'nosotros'
   get '/simbolos', to: 'page#simbolos', as: 'simbolos'
