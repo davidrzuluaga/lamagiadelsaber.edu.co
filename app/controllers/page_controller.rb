@@ -11,24 +11,26 @@ class PageController < ApplicationController
   end
 
   def galeria
-    galerysource = "fbapi"
-    fbpageid = 2210627005623617
-    access_token = "EAAEoct4isjABAOXwaRlnOcbpOkZAozZC4BllKDrmkqCKBGUYfnj46cL5BiC7ZA5ywAWrsv8q3UV0m54ZAZAlpm5BLLOlmGhZCZCrC5swIf7ffzZBSdexvarlJ7BZChqUb742ycvAy4hfLJNEnkSsIc962Jf5kIFKZARBkMmJRZCrzNolwZDZD"
-    if galerysource == "fbapi"
-      @photos = []
+    galerysource = Configura.where(name:"galerysource").first.config
+    @photos = []
+    if galerysource == "fbapi" || galerysource == "mix"
+      fbpageid = Configura.where(name:"fbpageid").first.config
+      access_token = Configura.where(name:"fbaccess_token").first.config
       @errormsg = ""
       begin
         url = "https://graph.facebook.com/v3.2/#{fbpageid}/photos?access_token=#{access_token}"
         resp = Net::HTTP.get_response(URI.parse(url))
         response = JSON.parse(resp.body)
-        facebookapi = response.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
-        facebookapi[:data].each {|p| @photos << p.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}}
+        response["data"].each {|ph| @photos << {id:"#{ph['id']}", url: "https://graph.facebook.com/#{ph['id']}/picture?width=160&height=160", title: ""}}
       rescue StandardError => @photos
-        @photos = [{:id => "Error"}]
+        @photos = [{id: "1018888671464129", url: "https://graph.facebook.com/1018888671464129/picture?width=160&height=160", title: ""}]
         @errormsg = response
       end
-    else
-      @photos
+    end
+    if galerysource == "database" || galerysource == "mix"
+      urlphoto = []
+      Photo.where(source: "url").each {|ph| @photos << {id: ph.id, url: ph.url, title: ph.title}}
+      Photo.where(source: "fb").each {|ph| @photos << {id: ph.id, url: "https://graph.facebook.com/#{ph.url}/picture?width=160&height=160", title: ph.title}}
     end
   end
 
