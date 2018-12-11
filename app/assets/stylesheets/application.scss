@@ -237,5 +237,16 @@ a:hover {text-decoration: none;}
     text-align: end
 }
 .boletines {
-    margin-right: 200px
+    margin-right: 200px;
+}
+.info {
+    margin-top: 20px;
+}
+.boletines .body {
+    border: 1px solid rgb(145, 145, 145);
+    border-radius: 5px;
+    background-color: rgb(218, 246, 255);
+}
+.boletines .body p {
+    padding-left: 20px;
 }

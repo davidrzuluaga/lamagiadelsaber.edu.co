@@ -15,7 +15,8 @@
                   <ul class="list-group list-group-flush">
                     <% @boletines.each do |boletin|%>
                           <li class="list-group-item">
-                            <%= boletin.title %>
+                            <%= boletin.created_at.strftime("%d.%m.%y") %>
+                            <%= boletin.title.truncate(25, separator: '') %>
                             <a href="/padres/<%= boletin.id %>" target="_blank">ver</a>
                             <%= link_to "&#x270E; Editar ".html_safe, edit_padre_path(boletin) %> 
                             <%= link_to "&#128465; Eliminar ".html_safe, boletin, method: :delete, data: { confirm: "¿Eliminar?" } %>
@@ -32,7 +33,8 @@
                   <ul class="list-group list-group-flush">
                     <% @infoutil.each do |info|%>
                           <li class="list-group-item">
-                            <%= info.title %>
+                            <%= info.created_at.strftime("%d.%m.%y") %>
+                            <%= info.title.truncate(25, separator: '')  %>
                             <a href="/padres/<%= info.id %>" target="_blank">ver</a>
                             <%= link_to "&#x270E; Editar ".html_safe, edit_padre_path(info) %> 
                             <%= link_to "&#128465; Eliminar ".html_safe, info, method: :delete, data: { confirm: "¿Eliminar?" } %>

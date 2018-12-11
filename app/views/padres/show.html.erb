@@ -8,8 +8,10 @@
             <div class="boletines">
                 <h3><%= @info.title %></h3>
                 <p><%= @info.created_at.strftime("%d-%m-%Y") %></p>
-                <p><%= "<a href='#{@info.pdflink}'><img src='https://s3.us-east-2.amazonaws.com/lamagiadelsaber.edu.co/pdf_icon.png' alt='pdficon' width='30' height='30' > Descarga el PDF oficial con esta información</a>".html_safe if @info.pdflink != "" %></p>
-                <p><%= markdown(@info.body) %></p>
+                <p><%= "<a href='#{@info.pdflink}' target='_blank'><img src='https://s3.us-east-2.amazonaws.com/lamagiadelsaber.edu.co/pdf_icon.png' alt='pdficon' width='30' height='30' > Descarga el PDF oficial con esta información</a>".html_safe if @info.pdflink != "" %></p>
+                <div class="body">
+                    <p><%= markdown(@info.body) %></p>
+                </div>
             </div>
         </div>
         <%= render "./page/footer" %>
