@@ -22,8 +22,8 @@ class AdminsController < ApplicationController
   end
 
   def publicaciones
-    @boletines = Padre.where(category: "boletines").order(:created_at)
-    @infoutil = Padre.where(category: "infoutil").order(:created_at)
+    @boletines = Padre.where(category: "boletines").order(created_at: :desc)
+    @infoutil = Padre.where(category: "infoutil").order(created_at: :desc)
   end
 
   private
