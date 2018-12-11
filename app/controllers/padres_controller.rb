@@ -2,16 +2,16 @@ class PadresController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :update, :destroy, :edit]
 
   def index
-    @boletines = Padre.where(category: "boletines").order(:created_at).limit(3)
-    @infoutil = Padre.where(category: "infoutil").order(:created_at).limit(3)
+    @boletines = Padre.where(category: "boletines").order(created_at: :desc).limit(3)
+    @infoutil = Padre.where(category: "infoutil").order(created_at: :desc).limit(3)
   end
 
   def infoutil
-    @infoutil = Padre.where(category: "infoutil").order(:created_at)
+    @infoutil = Padre.where(category: "infoutil").order(created_at: :desc)
   end
 
   def boletines
-    @boletines = Padre.where(category: "boletines").order(:created_at)    
+    @boletines = Padre.where(category: "boletines").order(created_at: :desc)    
   end
 
   def show
