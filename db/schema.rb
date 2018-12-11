@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_171209) do
+ActiveRecord::Schema.define(version: 2018_12_11_161844) do
+
+  create_table "configuras", force: :cascade do |t|
+    t.string "name"
+    t.string "config"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "padres", force: :cascade do |t|
     t.string "title"
@@ -18,6 +25,14 @@ ActiveRecord::Schema.define(version: 2018_12_10_171209) do
     t.string "imgcover"
     t.string "category"
     t.string "pdflink"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "title"
+    t.string "source"
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
