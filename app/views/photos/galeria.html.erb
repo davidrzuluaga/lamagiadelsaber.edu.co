@@ -1,6 +1,6 @@
-<%= render "header" %>
+<%= render "./page/header" %>
 <a name="inicio"></a>
-<%= render "navbar" %>
+<%= render "./page/navbar" %>
 <div class="main">
     <div class="dropsreverted"></div>
     <div class="row">
@@ -21,7 +21,7 @@
                             <p><%=@errormsg%><strong><%=photo[:title]%></strong></p>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                           </div>
                         </div>
                       </div>
@@ -29,6 +29,6 @@
                 <% end %>
             </div>
         </div>
-    <%= render "footer" %>
+    <%= render "./page/footer" %>
     </div>
 </div>

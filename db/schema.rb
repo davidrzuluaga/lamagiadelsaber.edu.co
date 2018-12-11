@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_11_161844) do
+ActiveRecord::Schema.define(version: 2018_12_11_182954) do
 
-  create_table "configuras", force: :cascade do |t|
+  create_table "admins", force: :cascade do |t|
     t.string "name"
     t.string "config"
     t.datetime "created_at", null: false
