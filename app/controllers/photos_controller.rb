@@ -1,7 +1,7 @@
 require "net/http"
 
 class PhotosController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [ :create, :destroy]
 
   def galeria
     galerysource = Admin.where(name:"galerysource").first.config
