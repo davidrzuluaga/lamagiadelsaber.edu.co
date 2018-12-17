@@ -1,64 +1,53 @@
-<%= render "./page/header" %>
-<a name="inicio"></a>
-<%= render "./page/navbar" %>
-<div class="main">
-    <div class="dropsreverted"></div>
-    <div class="offset-lg-2">
-      <div class="row admin">
-        <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h3>Fotos Publicadas</h3>
-              </div>
-              <ul class="list-group list-group-flush">
-                <% @allphotos.each do |ph| %>    
-                      <li class="list-group-item">
-                        <img width="30" height="30" src="<%=ph.source == "fb" ? "https://graph.facebook.com/#{ph.url}/picture?width=160&height=160" : ph.url  %>" alt="img">
-                        <%= ph.title.truncate(25, separator: '') %>
-                        <%= link_to "&#128465; Eliminar ".html_safe, ph, method: :delete, data: { confirm: "¿Eliminar?" }%>
-                      </li>
-                <% end %>
-              </ul>
-            </div>
-            <div class="card">
-              <div class="card-header">
-                <h3>Configuraciones</h3>
-              </div>
-              <ul class="list-group list-group-flush">
-                <% @configs.each do |conf| %>    
-                    <li class="list-group-item">
-                      <strong><%= conf.name.truncate(25, separator: '') %></strong>
-                      <%= conf.config.truncate(25, separator: '') %>
-                      <%= link_to "&#x270E; Editar ".html_safe, edit_admin_path(conf) %> 
-                    </li>
-                <% end %>
-              </ul>
-            </div>
-        </div>
-        <div class="col-lg-3 newphoto">
-            <div class="card">
-              <h3 class="form-group">Nueva Foto</h3>
-             <%= form_for @photo do |f| %>
-              <div class="form-group">
-                <%= f.text_field :title, class: "form-control input-lg", placeholder: "Ingresa el titulo" %>
-              </div>
-              <div class="form-group">
-                <%= f.label "id de foto de Facebook" %>
-                <%= f.radio_button :source, "fb" %><br />
-                <%= f.label "URL" %>
-                <%= f.radio_button :source, "url" %>
-              </div>
-              <div class="form-group">
-                <%= f.text_field :url, class: "form-control input-lg", placeholder: "Ingresa el id o URL" %>
-              </div>
-              <div class="form-group">
-                <%= f.submit class:"btn"%>
-              </div>
-            <% end %>
-            </div>
-          <%= render "ayuda" %>
-        </div>
+<div class="admin offset-lg-2 col-lg-6">
+    <div class="card">
+      <div class="card-header">
+        <h3>Fotos Publicadas</h3>
       </div>
+      <ul class="list-group list-group-flush">
+        <% @allphotos.each do |ph| %>    
+              <li class="list-group-item">
+                <img width="30" height="30" src="<%=ph.source == "fb" ? "https://graph.facebook.com/#{ph.url}/picture?width=160&height=160" : ph.url  %>" alt="img">
+                <%= ph.title.truncate(25, separator: '') %>
+                <%= link_to "&#128465; Eliminar ".html_safe, ph, method: :delete, data: { confirm: "¿Eliminar?" }%>
+              </li>
+        <% end %>
+      </ul>
     </div>
-    <%= render "./page/footer" %>
+    <div class="card">
+      <div class="card-header">
+        <h3>Configuraciones</h3>
+      </div>
+      <ul class="list-group list-group-flush">
+        <% @configs.each do |conf| %>    
+            <li class="list-group-item">
+              <strong><%= conf.name.truncate(25, separator: '') %></strong>
+              <%= conf.config.truncate(25, separator: '') %>
+              <%= link_to "&#x270E; Editar ".html_safe, edit_admin_path(conf) %> 
+            </li>
+        <% end %>
+      </ul>
+    </div>
+</div>
+<div class="col-lg-3 newphoto">
+    <div class="card">
+      <h3 class="form-group">Nueva Foto</h3>
+     <%= form_for @photo do |f| %>
+      <div class="form-group">
+        <%= f.text_field :title, class: "form-control input-lg", placeholder: "Ingresa el titulo" %>
+      </div>
+      <div class="form-group">
+        <%= f.label "id de foto de Facebook" %>
+        <%= f.radio_button :source, "fb" %><br />
+        <%= f.label "URL" %>
+        <%= f.radio_button :source, "url" %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :url, class: "form-control input-lg", placeholder: "Ingresa el id o URL" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit class:"btn"%>
+      </div>
+    <% end %>
+    </div>
+  <%= render "ayuda" %>
 </div>

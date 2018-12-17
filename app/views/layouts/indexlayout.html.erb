@@ -21,16 +21,7 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
-    <%= render "./page/header" %>
-    <a name="inicio"></a>
-    <%= render "./page/navbar" %>
-    <div class="main">
-        <div class="dropsreverted"></div>
-        <div class="row">
           <%= yield %>
-          <%= render "./page/footer" %>
-        </div>
-    </div>
-    
+
   </body>
 </html>

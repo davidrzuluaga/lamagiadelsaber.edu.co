@@ -1,34 +1,25 @@
-<%= render "./page/header" %>
-<a name="inicio"></a>
-<%= render "./page/navbar" %>
-<div class="main">
-    <div class="dropsreverted"></div>
-    <div class="row">
-        <div id="main" class="offset-sm-2">
-            <h2>Galería</h2>
-            <div class="row gallery">
-                <% @photos.each do |photo|%>
-                    <div id="main" class="col-4">
-                        <div id="gallerybutton" class="card">
-                            <a data-toggle="modal" data-target="#Modal<%=photo[:id]%>"><img class="card-img-top" src="<%=photo[:url]%>" alt="Card image cap"></a>
-                        </div>
-                    </div> 
-                    <div class="modal fade" id="Modal<%=photo[:id]%>" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                           <div class="modal-body">
-                            <img class="card-img-top" src="<%=photo[:url]%>" alt="Card image cap">
-                            <p><%=@errormsg%><strong><%=photo[:title]%></strong></p>
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                <% end %>
+<div id="main" class="offset-sm-2">
+    <h2>Galería</h2>
+    <div class="row gallery">
+        <% @photos.each do |photo|%>
+            <div id="main" class="col-4">
+                <div id="gallerybutton" class="card">
+                    <a data-toggle="modal" data-target="#Modal<%=photo[:id]%>"><img class="card-img-top" src="<%=photo[:url]%>" alt="Card image cap"></a>
+                </div>
+            </div> 
+            <div class="modal fade" id="Modal<%=photo[:id]%>" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                   <div class="modal-body">
+                    <img class="card-img-top" src="<%=photo[:url]%>" alt="Card image cap">
+                    <p><%=@errormsg%><strong><%=photo[:title]%></strong></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-    <%= render "./page/footer" %>
+        <% end %>
     </div>
 </div>

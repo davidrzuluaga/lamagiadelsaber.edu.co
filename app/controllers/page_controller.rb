@@ -1,5 +1,6 @@
-
 class PageController < ApplicationController
+  layout "indexlayout", only: [:index]
+  
   def index
   end
 
@@ -11,6 +12,4 @@ class PageController < ApplicationController
 
   def contacto
   end
-
-
 end
