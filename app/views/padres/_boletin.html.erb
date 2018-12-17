@@ -1,15 +1,13 @@
-<div class="row">
-    <% @boletines.each do |boletin| %>
-        <div class="col-lg-4">
-            <a href="/padres/<%= boletin.id %>#inicio"><div class="card info">
-              <img class="card-img-top" src="<%= boletin.imgcover %>" alt="Card image cap">
-              <div class="card-body">
-                <h4><%= boletin.title.truncate(50, separator: ' ') %></h4>
-                <p class="card-text"><%= markdown(boletin.body.truncate(100, separator: ' ')) %></p>
-                <p><%= boletin.created_at.strftime("%d-%m-%Y") %></p>
-                <button type="button" class="btn btn-primary btn-sm">Leer Boletin</button>
-              </div>
-            </div></a>
-        </div>
-    <% end %>
-</div>   
+<% @boletines.each do |boletin| %>
+    <div class="col-sm-4">
+        <a href="/padres/<%= boletin.id %>#inicio"><div class="card info">
+          <img class="card-img-top" src="<%= boletin.imgcover %>" alt="Card image cap">
+          <div class="card-body">
+            <h4><%= boletin.title.truncate(50, separator: ' ') %></h4>
+            <p class="card-text"><%= markdown(boletin.body.truncate(100, separator: ' ')) %></p>
+            <p><%= boletin.created_at.strftime("%d-%m-%Y") %></p>
+            <button type="button" class="btn btn-primary btn-sm">Leer Boletin</button>
+          </div>
+        </div></a>
+    </div>
+<% end %>

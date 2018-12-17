@@ -1,15 +1,13 @@
-<div class="row">
-    <% @infoutil.each do |info| %>
-        <div class="col-lg-4">
-            <a href="/padres/<%= info.id %>#inicio"><div class="card info">
-              <img class="card-img-top" src="<%= info.imgcover %>" alt="Card image cap">
-              <div class="card-body">
-                <h4><%= info.title.truncate(50, separator: ' ') %></h4>
-                <p class="card-text"><%= markdown(info.body.truncate(100, separator: ' ')) %></p>
-                <p><%= info.created_at.strftime("%d-%m-%Y") %></p>
-                <button type="button" class="btn btn-primary btn-sm">Leer Información</button>
-              </div>
-            </div></a>
-        </div>
-    <% end %>
-</div>   
+<% @infoutil.each do |info| %>
+    <div class="col-lg-4">
+        <a href="/padres/<%= info.id %>#inicio"><div class="card info">
+          <img class="card-img-top" src="<%= info.imgcover %>" alt="Card image cap">
+          <div class="card-body">
+            <h4><%= info.title.truncate(50, separator: ' ') %></h4>
+            <p class="card-text"><%= markdown(info.body.truncate(100, separator: ' ')) %></p>
+            <p><%= info.created_at.strftime("%d-%m-%Y") %></p>
+            <button type="button" class="btn btn-primary btn-sm">Leer Información</button>
+          </div>
+        </div></a>
+    </div>
+<% end %>
