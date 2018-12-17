@@ -4,11 +4,17 @@ class PhotosController < ApplicationController
   before_action :authenticate_user!, only: [ :create, :destroy]
 
   def galeria
-    galerysource = Admin.where(name:"galerysource").first.config
-    @photos = []
-    if galerysource == "fbapi" || galerysource == "mix"
+    begin
+      galerysource = Admin.where(name:"galerysource").first.config
       fbpageid = Admin.where(name:"fbpageid").first.config
       access_token = Admin.where(name:"fbaccess_token").first.config
+    rescue StandardError 
+      galerysource = "mix"
+      fbpageid = ""
+      access_token = ""
+    end
+    @photos = []
+    if galerysource == "fbapi" || galerysource == "mix"
       @errormsg = ""
       begin
         url = "https://graph.facebook.com/v3.2/#{fbpageid}/photos?access_token=#{access_token}"
