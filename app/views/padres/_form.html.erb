@@ -13,7 +13,7 @@
       <div class="form-group">
         <%= f.text_field :title, class: "form-control input-lg", placeholder: "Ingresa el titulo" %>
       </div>
-      <a href="https://es.wikipedia.org/wiki/Markdown" target="_blank">Este campo soporta Markdown</a>
+        <%= render "markdown" %>    
       <div class="form-group">
         <%= f.text_area :body, class:"form-control", id:"FormControlTextarea1", rows:"10", placeholder: "Ingresa el contenido" %>
       </div>
