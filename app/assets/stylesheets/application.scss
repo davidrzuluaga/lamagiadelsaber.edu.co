@@ -7,6 +7,12 @@
         font-family: 'Kalam', cursive;
     }
 }
+.row {
+    margin-right: 0px
+}
+.col-12 {
+    padding: 0px 0px 0px 0px
+}
 .header {
     background: url('https://s3.us-east-2.amazonaws.com/lamagiadelsaber.edu.co/bannerimg.jpg') no-repeat 50%;
     background-size: cover;
@@ -235,9 +241,6 @@ a:hover {text-decoration: none;}
 }
 .list-group-flush .controles {
     text-align: end
-}
-.boletines {
-    margin-right: 200px;
 }
 .info {
     margin-top: 20px;
